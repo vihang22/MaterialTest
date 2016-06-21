@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MaterialTest</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drawer_open">Drawer_Open</string>
+    <string name="drawer_close">Drawer_Close</string>
+</resources>

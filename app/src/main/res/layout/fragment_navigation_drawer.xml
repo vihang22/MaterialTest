@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEE"
+    tools:context="com.ckeeda.materialtest.NavigationDrawerFragment">
+
+
+    <ImageView
+        android:id="@+id/drawer_image"
+        android:src="@color/accent_material_light"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/drawer_recyclerview"
+        android:layout_below="@+id/drawer_image"
+        android:paddingLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+</RelativeLayout>
