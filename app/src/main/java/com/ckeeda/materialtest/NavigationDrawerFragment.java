@@ -2,6 +2,7 @@ package com.ckeeda.materialtest;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,7 +12,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,9 +23,10 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NavigationDrawerFragment extends Fragment {
+public class NavigationDrawerFragment extends Fragment implements Recycler_Adapter.ClickListener {
 
     private static final String PREF_FILE = "preftext";
+
     private final String KEY_LEARNDRAWER = "drawer_leared";
 
     private ActionBarDrawerToggle mActionDrawerToggle;
@@ -35,6 +36,7 @@ public class NavigationDrawerFragment extends Fragment {
     private View mContainerView;
     private RecyclerView drawer_recycler;
     private Recycler_Adapter drawer_adapter;
+    static List<Information> data;
 
 
     public NavigationDrawerFragment() {
@@ -64,6 +66,7 @@ public class NavigationDrawerFragment extends Fragment {
         drawer_recycler = (RecyclerView)view.findViewById(R.id.drawer_recyclerview);
 
         drawer_adapter = new Recycler_Adapter(getActivity(),getdata());
+        drawer_adapter.setClickListener(this);
         drawer_recycler.setAdapter(drawer_adapter);
         drawer_recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -72,13 +75,13 @@ public class NavigationDrawerFragment extends Fragment {
     }
 
     public static List<Information> getdata(){
-        List<Information> data = new ArrayList<>();
+         data = new ArrayList<>();
         String title[] = {"Hetal","Vihang","Sid","Palak"};
         for(int i=0;i<title.length;i++){
             Information current = new Information();
             current.iconid = R.drawable.next;
             current.title = title[i];
-            Log.d("TITLE", "getdata:"+title[i]);
+//            Log.d("TITLE", "getdata:"+title[i]);
             data.add(current);
         }
         return data;
@@ -141,5 +144,13 @@ public class NavigationDrawerFragment extends Fragment {
         SharedPreferences sharepref = context.getSharedPreferences(PREF_FILE,Context.MODE_PRIVATE);
         return sharepref.getString(PrefName,DefaultValue);
 
+    }
+
+    @Override
+    public void itemclicked(View view, int position) {
+        Intent i = new Intent(getActivity(),SubActivity.class);
+        i.putExtra("name",data.get(position).getTitle());
+
+        startActivity(i);
     }
 }

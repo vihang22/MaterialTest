@@ -56,7 +56,7 @@ public class MainActivity extends ActionBarActivity {
 
         }
         if(id == R.id.next){
-            startActivity(new Intent(this,SubActivity.class));
+            startActivity(new Intent(this,SubActivity.class).putExtra("name","SubActivity"));
 
         }
         return super.onOptionsItemSelected(item);

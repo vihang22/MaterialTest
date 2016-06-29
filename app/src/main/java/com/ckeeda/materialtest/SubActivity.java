@@ -23,6 +23,9 @@ public class SubActivity extends ActionBarActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        getSupportActionBar().setTitle(getIntent().getStringExtra("name"));
+       // Log.i("Sub Activity Title", (String) toolbar.getTitle());
+       // Log.i("Sub Activity Title", (String) toolbar.getSubtitle());
     }
 
     @Override
