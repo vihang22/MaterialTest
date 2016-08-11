@@ -5,4 +5,11 @@
     android:background="#F44336"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
+ <TextView
+     android:id="@+id/appbar_text"
+     android:text="appbar_text"
+     android:layout_width="wrap_content"
+     android:layout_height="match_parent"
+     android:paddingLeft="80dp"/>
+
 </android.support.v7.widget.Toolbar>

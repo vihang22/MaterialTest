@@ -7,9 +7,9 @@
         android:id="@+id/menu_setting"
         android:title="Setting"/>
 
-    <item android:id="@+id/next"
+ <!--   <item android:id="@+id/next"
         android:icon="@drawable/next"
         android:orderInCategory="200"
         app:showAsAction="always"
-        android:title="next" />
+        android:title="next" />-->
 </menu>

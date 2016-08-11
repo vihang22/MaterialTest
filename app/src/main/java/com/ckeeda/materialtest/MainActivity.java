@@ -1,6 +1,5 @@
 package com.ckeeda.materialtest;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -55,10 +54,10 @@ public class MainActivity extends ActionBarActivity {
             return true;
 
         }
-        if(id == R.id.next){
+      /*  if(id == R.id.next){
             startActivity(new Intent(this,SubActivity.class).putExtra("name","SubActivity"));
 
         }
-        return super.onOptionsItemSelected(item);
+      */  return super.onOptionsItemSelected(item);
     }
 }
